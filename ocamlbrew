@@ -369,7 +369,7 @@ function brew_ocaml() {
 		fi
             else
                 curl -o ocaml-$OCAML_VERSION.tar.gz "$OCAML_URL"
-                tar xzf ocaml-$OCAML_VERSION.tar.gz
+                tar xvf ocaml-$OCAML_VERSION.tar.gz
                 cd ocaml-$OCAML_VERSION
             fi
             ;;
