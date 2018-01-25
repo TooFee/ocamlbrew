@@ -368,7 +368,7 @@ function brew_ocaml() {
 		    git checkout "$OCAMLBREW_GIT_REVISION"
 		fi
             else
-                curl -o ocaml-$OCAML_VERSION.tar.gz "$OCAML_URL"
+                curl -kL -o ocaml-$OCAML_VERSION.tar.gz "$OCAML_URL"
                 tar xvf ocaml-$OCAML_VERSION.tar.gz
                 cd ocaml-$OCAML_VERSION
             fi
@@ -411,7 +411,7 @@ function brew_findlib() {
             ;;
         build)
             say Extracting and building findlib
-            tar xzf findlib-$FINDLIB_VERSION.tar.gz
+            tar xvf findlib-$FINDLIB_VERSION.tar.gz
             cd findlib-$FINDLIB_VERSION
             ./configure
             "$OCAMLBREW_MAKE" all opt
@@ -435,7 +435,7 @@ function brew_opam() {
         retrieve)
             say Retrieving the latest version of opam
             curl -kLO $OPAM_URL
-            tar xzf opam-full-$OPAM_VERSION.tar.gz
+            tar xvf opam-full-$OPAM_VERSION.tar.gz
             cd opam-full-$OPAM_VERSION
             ;;
         build)
