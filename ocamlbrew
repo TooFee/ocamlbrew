@@ -435,7 +435,7 @@ function brew_opam() {
     case $1 in
         retrieve)
             say Retrieving the latest version of opam
-            curl -kLO $OPAM_URL
+            curl -kL -o opam-full-$OPAM_VERSION.tar.gz $OPAM_URL
             tar xvf opam-full-$OPAM_VERSION.tar.gz
             cd opam-full-$OPAM_VERSION
             ;;
