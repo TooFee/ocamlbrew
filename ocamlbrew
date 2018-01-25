@@ -368,7 +368,7 @@ function brew_ocaml() {
 		    git checkout "$OCAMLBREW_GIT_REVISION"
 		fi
             else
-                curl -O "$OCAML_URL"
+                curl -o ocaml-$OCAML_VERSION.tar.gz "$OCAML_URL"
                 tar xzf ocaml-$OCAML_VERSION.tar.gz
                 cd ocaml-$OCAML_VERSION
             fi
