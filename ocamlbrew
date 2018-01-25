@@ -125,7 +125,7 @@ function init_variables() {
     # opam version we are installing and download URL
     : ${OPAM_MAJOR_VERSION=2}
     : ${OPAM_MINOR_VERSION=0}
-    : ${OPAM_PATCH_VERSION=0~beta6}
+    : ${OPAM_PATCH_VERSION=0-beta6}
     : ${OPAM_VERSION=$OPAM_MAJOR_VERSION.$OPAM_MINOR_VERSION.$OPAM_PATCH_VERSION}
     : ${OPAM_URL=https://github.com/ocaml/opam/releases/download/$OPAM_VERSION/opam-full-$OPAM_VERSION.tar.gz}
 
@@ -435,7 +435,7 @@ function brew_opam() {
     case $1 in
         retrieve)
             say Retrieving the latest version of opam
-            curl -kL -o opam-full-$OPAM_VERSION.tar.gz $OPAM_URL
+            curl -kLO $OPAM_URL
             tar xvf opam-full-$OPAM_VERSION.tar.gz
             cd opam-full-$OPAM_VERSION
             ;;
